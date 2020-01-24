@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#this is a slightly modified version of a python script from https://github.com/lovelypool/cardano_stuff/blob/master/monitor.py  
 
 from prometheus_client import Gauge
 from prometheus_client import Summary
