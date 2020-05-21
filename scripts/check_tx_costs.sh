@@ -7,11 +7,11 @@
 #___________________________________________
 cli=cardano-cli
 magic="--testnet-magic 42"
-s_key="<path to your secret key>"
+s_key="~/PATH/TO/YOUR.skey/FILE"
 #___________________________________________
 
 read -p "To how many addresses would you like to send ADA? " tx_out 
-tx_out=`expr $tx_out + 1`
+tx_out=$(($tx_out + 1))
 
 read -p "From how many addresses do you wish to withdraw ADA? " tx_in 
 
@@ -20,7 +20,7 @@ $cli shelley query protocol-parameters --testnet-magic 42 > prot.json
 
 
 #pull slot height from the node
-ttl_num=$(cardano-cli shelley query tip --testnet-magic 42 | awk '$3=="{unSlotNo" {print $5}'| sed 's/})//')
+ttl_num=$($cli shelley query tip $magic | awk '$3=="{unSlotNo" {print $5}'| sed 's/})//')
 echo "Current slot height" $ttl_num
 ((ttl_num=ttl_num+1000))
 
