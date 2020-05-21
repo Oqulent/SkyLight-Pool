@@ -13,9 +13,9 @@ s_key="<path to your secret key>"
 read -p "To how many addresses would you like to send ADA? " tx_out 
 tx_out=`expr $tx_out + 1`
 
-read -p "From how many addresses do you wish to withdraw ADA " tx_in 
+read -p "From how many addresses do you wish to withdraw ADA? " tx_in 
 
-#get protofol parameters, save them in a file
+#get protocol parameters, save them in a file
 $cli shelley query protocol-parameters --testnet-magic 42 > prot.json
 
 
