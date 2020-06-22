@@ -63,10 +63,15 @@ sleep 5
 echo "Git clone the cardano-node checkout a preferred tag" 
 
 #7. clone the cardano-node repository, checkout the preferred tag
+
 git clone https://github.com/input-output-hk/cardano-node.git
+
 cd cardano-node
-git checkout 1.13.0-rewards
-git checkout -b 1.13.0-rewards
+git fetch --tags && git tag
+
+read -p "Please enter your preferred tag " cardano_build 
+git checkout $cardano_build
+git checkout -b $cardano_build
 
 
 echo ""
