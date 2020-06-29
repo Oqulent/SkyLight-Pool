@@ -1,6 +1,6 @@
 #!/bin/bash
 mkdir ~/haskell_node/hot_keys
-mkrir ~/haskell_node/cold_keys
+mkdir ~/haskell_node/cold_keys
 directory=/home/$USER/haskell_node/hot_keys
 
 
