@@ -1,7 +1,7 @@
 #!/bin/bash
 source ~/.bashrc
 
-topology="/home/$USER/haskell_node/config/ff-topology.json"
+topology="/home/$USER/haskell_node/config/shelley_testnet-topology.json"
 database="/home/$USER/haskell_node/db"
 socket="/home/$USER/haskell_node/db/node1.socket"
 config="/home/$USER/haskell_node/config/ff-config.json"
