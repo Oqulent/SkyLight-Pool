@@ -6,6 +6,7 @@
 
 # Save below into a json file named pool.json after chang the contents to match the details of your pool.
 
+
 {
 "name": "TestPool",
 "description": "The pool that tests all the pools",
@@ -18,10 +19,10 @@ metadata=cardano-cli shelley stake-pool metadata-hash --pool-metadata-file pool.
 
 # Create a pool certificate
 cardano-cli shelley stake-pool registration-certificate \
---cold-verification-key-file ~/haskell_node/cold_keys/node1.vkey \
---vrf-verification-key-file ~/haskell_node/hot-keys/vrf1.vkey \
---pool-pledge 1000000000 \
---pool-cost 100000000 \
+--cold-verification-key-file ~/node_haskell/files/cold_keys/node1.vkey \
+--vrf-verification-key-file ~/node_haskell/files/hot-keys/vrf1.vkey \
+--pool-pledge 977000000000 \
+--pool-cost 330000000 \
 --pool-margin .05 \
 --pool-reward-account-verification-key-file ~/haskell_node/hot_keys/stake1.vkey \
 --pool-owner-stake-verification-key-file ~/haskell_node/hot_keys/stake1.vkey \
@@ -30,8 +31,7 @@ cardano-cli shelley stake-pool registration-certificate \
 --pool-relay-ipv4 123.123.123.123 \
 --metadata-url https://gist.githubusercontent.com/testPool/.../testPool.json \ # host your json file on internet and replace this url with the one for your json file
 --metadata-hash $metadata \
---out-file ~/haskell_node/tmp/pool.cert
-
+--out-file ~/haskell_node/tmp/pool1.cert
 
 #create a delegation certificate
 cardano-cli shelley stake-address delegation-certificate \
