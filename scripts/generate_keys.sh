@@ -23,9 +23,9 @@ cardano-cli shelley node key-gen --cold-verification-key-file node1.vkey --cold-
 cd ~/haskell_node/hot_keys 
 
 #6. generate a stake address
-cardano-cli shelley stake-address build --stake-verification-key-file stake1.vkey --out-file stake1.addr --testnet-magic 42
+cardano-cli shelley stake-address build --stake-verification-key-file stake1.vkey --out-file stake1.addr --mainnet
 
 #7. generate a payment address that delegates to a stake address from 6
-cardano-cli shelley address build --payment-verification-key-file pay1.vkey --stake-verification-key-file stake1.vkey --out-file pay1.addr --testnet-magic 42
+cardano-cli shelley address build --payment-verification-key-file pay1.vkey --stake-verification-key-file stake1.vkey --out-file pay1.addr --mainnet
 
 #7. get funds from the faucet

@@ -60,7 +60,7 @@ echo $(cabal --version)
 echo ""
 echo ""
 sleep 5
-echo "Git clone the cardano-node checkout a preferred tag" 
+echo "Git clone the cardano-node checkout a preferred tag. " 
 
 #7. build the required libsodium library
 git clone https://github.com/input-output-hk/libsodium.git
@@ -80,7 +80,7 @@ git clone https://github.com/input-output-hk/cardano-node.git
 cd cardano-node
 git fetch --tags && git tag
 
-read -p "Please enter your preferred tag " cardano_build 
+read -p "Please enter your preferred tag. This script has been tested on 1.15.1 " cardano_build 
 git checkout $cardano_build
 git checkout -b $cardano_build
 echo "package cardano-crypto-praos\n  flags: -external-libsodium-vrf\n" > cabal.project.local
@@ -121,9 +121,10 @@ cd haskell_node && mkdir scripts logs db config
 cd config
 
 #13. download configuration files, scripts, etc
-wget https://hydra.iohk.io/build/3245987/download/1/shelley_testnet-config.json
-wget https://hydra.iohk.io/build/3245987/download/1/shelley_testnet-genesis.json
-wget https://hydra.iohk.io/build/3245987/download/1/shelley_testnet-topology.json
+wget https://hydra.iohk.io/build/3416851/download/1/mainnet_candidate-config.json
+wget https://hydra.iohk.io/build/3416851/download/1/mainnet_candidate-byron-genesis.json
+wget https://hydra.iohk.io/build/3416851/download/1/mainnet_candidate-shelley-genesis.json
+wget https://hydra.iohk.io/build/3416851/download/1/mainnet_candidate-topology.json
 
 #14. download a start_script for a relay node
 cd ../scripts
