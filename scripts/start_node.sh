@@ -114,6 +114,7 @@ sleep 10
 export PATH="~/.local/bin:$PATH" >> ~/.bashrc
 source ~/.bashrc
 
+<<<<<<< HEAD
 #12. create a directory structure for the node, copy files to run F&F relay node
 cd ~
 mkdir haskell_node
@@ -131,4 +132,19 @@ cd ../scripts
 wget https://raw.githubusercontent.com/Oqulent/SkyLight-Pool/master/scripts/start_node.sh
 chmod +x start_node.sh
 ./start_node.sh
+=======
+topology="/home/$USER/haskell_node/config/mainnet_candidate-topology.json"
+database="/home/$USER/haskell_node/db"
+socket="/home/$USER/haskell_node/db/node1.socket"
+config="/home/$USER/haskell_node/config/mainnet_candidate-config.json"
+port=8081
+
+cardano-node run \
+     --topology $topology \
+     --database-path $database \
+     --socket-path $socket \
+     --host-addr 127.0.0.1 \
+     --config $config\
+     --port $port
+>>>>>>> 871e826c84aee5a045901674877e331227a6e347
 
